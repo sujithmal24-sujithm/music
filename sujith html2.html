@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Music Player UI</title>
+<style>
+body {
+  background: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Player Card */
+.player {
+  background: #020617;
+  width: 300px;
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Album Art */
+.cover {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+/* Song Info */
+.song-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.artist {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Progress Bar */
+.progress {
+  background: #1e293b;
+  height: 6px;
+  border-radius: 5px;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(to right, #6366f1, #ec4899);
+  transition: width 0.5s ease;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Buttons */
+.btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #6366f1;
+  transform: scale(1.1);
+}
+
+/* Play Button */
+.play-btn {
+  width: 55px;
+  height: 55px;
+  background: #ec4899;
+}
+
+.play-btn:hover {
+  background: #f472b6;
+}
+
+/* Play / Pause Toggle */
+#play-toggle {
+  display: none;
+}
+
+.play-icon::before {
+  content: "▶";
+  font-size: 20px;
+}
+
+#play-toggle:checked + .play-icon::before {
+  content: "❚❚";
+}
+</style>
+</head>
+<body>
+
+<div class="player">
+  <div class="cover"></div>
+
+  <div class="song-title">Kadhaippoma</div>
+  <div class="artist">Leon James</div>
+
+  <div class="progress">
+    <span></span>
+  </div>
+
+  <div class="controls">
+    <div class="btn">⏮</div>
+
+    <label class="btn play-btn">
+      <input type="checkbox" id="play-toggle">
+      <span class="play-icon"></span>
+    </label>
+
+    <div class="btn">⏭</div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
